@@ -1,0 +1,1 @@
+chrome.runtime.onInstalled.addListener(()=>{chrome.contextMenus.create({id:"webwhiz_add_note",title:"Add WebWhiz Sticky Note",contexts:["all"]})});chrome.contextMenus.onClicked.addListener((t,e)=>{t.menuItemId==="webwhiz_add_note"&&e&&e.id&&chrome.tabs.sendMessage(e.id,{type:"WEBWHIZ_ADD_NOTE"})});
